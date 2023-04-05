@@ -2,7 +2,7 @@ name: AWS Deployment
 on:
   pull_request:
     branches:
-      - deployaws
+      - deploy-aws
 
 jobs:
 #First we will see the application build or not , then we will deploy in EC2
