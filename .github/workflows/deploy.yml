@@ -2,7 +2,7 @@ name: AWS Deployment
 on:
   pull_request:
     branches:
-      - deploy-aws
+      -main
 
 jobs:
 #First we will see the application build or not , then we will deploy in EC2
@@ -18,8 +18,6 @@ jobs:
       run: docker-compose up -d --build
     - name: Build the application
       run: docker-compose exec -t testcases npm run build
-
-
 
   Deploy:
     needs: build
@@ -42,5 +40,5 @@ jobs:
             git fetch --all &&
             git reset --hard origin/${{ secrets.BRANCH_NAME }} &&
             git pull origin ${{ secrets.BRANCH_NAME }} &&
-            sudo docker compose up -d --build 
+            sudo docker-compose up -d --build 
             '
