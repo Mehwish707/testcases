@@ -1,15 +1,15 @@
-name: docker
+name: Build and Push
 on:
   push:
     branches:
       - 'develop'
 
-jobs: 
+jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout
+        name: Checkout code
         uses: actions/checkout@v3
       -
         name: Set up QEMU
@@ -30,4 +30,3 @@ jobs:
           context: .
           push: true
           tags: mehwish707/testcases:latest
-          
