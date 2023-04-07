@@ -29,4 +29,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: Mehwish707/testcases:latest
+          tags: mehwish707/testcases:latest
